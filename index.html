@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+ <style>
+         
+         body {
+                 background-color: #8D8DAA;
+              /*   // DFDFDE F7F5F2 F56D91 */
+                 padding-top: 100px;
+                 margin: auto;
+                 text-align: center;
+                 max-width: 800px;
+                 min-width: 300px;
+           }    
+           
+           
+         .outer {
+                background-color: #46244C;
+                min-height: 800px;
+                max-width: 500px;
+                margin: auto;
+                }
+                
+         .inner {
+                background-color: #F56D91;
+                max-width: 90%;
+                min-width: 90%;
+                min-height: 750px;
+                margin: auto;
+                padding: auto;
+           }
+           
+          .screen {
+                background-color: #DFDFDE;
+                max-width: 90%;
+                min-width: 90%;
+                min-height: 250px;
+                margin: auto;
+                padding-top: 100px;
+           }
+        .container {
+                background-color: #8D8DAA;
+                max-width: 1000px;
+                margin: auto;
+           }
+           
+        a:hover {
+            color: #633974;
+            text-decoration: none;
+            }
+        a {
+            color: #301934;
+            text-decoration: none;
+            }
+                 
+        .ending {
+               /* background-color: #46244C; */
+                max-width: 500px;
+                margin: auto;
+                font-size: 50%;
+                }
+</style>
+
+    <title>Smartphone Spoken Ringtone Machine</title>
+    
+  <script>
+        function play(str) {
+          
+            let audio = document.getElementById(str); 
+            audio.play();
+            let set = ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'];
+            let words = ['Hey', 'You have a new message', 'New notification', 'Pick me up', 'Incoming call', 'If you don\'t pick this up right now I\'m going to scream', 'Message', 'It\'s me again', 'Done for you'];
+            for (let i = 0; i < set.length; i++) {
+            if (str == set[i]) {          
+            document.getElementById('display').innerText = words[i];
+            console.log('yay!');
+                }
+            };
+           // console.log('finish');
+            };
+            
+        window.document.onkeydown = function (event) {
+           // console.log('start');
+            key = event.key;
+            let set = ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'];
+            let words = ['hey', 'you have a new message', 'new notification', 'pick me up', 'incoming call', 'if you don\'t pick this up right now i\'m going to scream', 'message', 'it\'s me again', 'done for you'];
+            for (let i = 0; i < set.length; i++) {
+            if (key == set[i] || key == set[i].toLowerCase()) {
+            document.getElementById('display').innerText = words[i];
+            play(set[i]);
+            }
+             
+            console.log(key);
+            
+           }
+           };
+           
+    
+           
+  </script>
+  </head>
+  
+  
+  <body>
+  <div class='container' id='drum-machine'>
+    <h1>Spoken Ringtone Machine</h1>
+    <div class='outer rounded' id='none'>
+    <br>
+    <div class='inner rounded'>
+    <br>
+    <div class='screen rounded h2' id='display'>Waiting to display...</div>
+    <br><h4>Click a button or type a key to hear your ringtone</h4>
+    <button class='drum-pad btn-small col-10 btn-warning rounded rounded' onclick="play('Q')" id='hey'> Q 
+       <audio id='Q' class='clip' src='hey.ogg'> </button><br>
+    <button class='drum-pad btn-small col-10 btn-warning rounded' onclick="play('W')" id='hey'> W 
+       <audio id='W' class='clip' src='you-have-a-new-message2.ogg'> </button><br>
+    <button class='drum-pad btn-small col-10 btn-warning rounded' onclick="play('E')" id='hey'> E 
+       <audio id='E' class='clip' src='new-notification.ogg'> </button><br> 
+    <button class='drum-pad btn-small col-10 btn-warning rounded' onclick="play('A')" id='hey'> A 
+       <audio id='A' class='clip' src='pick-me-up2.ogg'> </button><br>
+    <button class='drum-pad btn-small col-10 btn-warning rounded' onclick="play('S')" id='hey'> S 
+       <audio id='S' class='clip' src='incoming-call2.ogg'> </button><br>
+    <button class='drum-pad btn-small col-10 btn-warning rounded' onclick="play('D')" id='hey'> D 
+       <audio id='D' class='clip' src='if-you-dont-pick2.ogg'> </button><br>
+    <button class='drum-pad btn-small col-10 btn-warning rounded' onclick="play('Z')" id='hey'> Z 
+       <audio id='Z' class='clip' src='message.ogg'> </button><br>
+    <button class='drum-pad btn-small col-10 btn-warning rounded' onclick="play('X')" id='hey'> X 
+       <audio id='X' class='clip' src='its-me-again.ogg'> </button><br>
+    <button class='drum-pad btn-small col-10 btn-warning rounded' onclick="play('C')" id='hey'> C 
+       <audio id='C' class='clip' src='done-for-you.ogg'> </button><br>
+    
+   
+    </div>
+    </div>
+  </div><br><div class='ending'>Voice samples are from the awesome folks at <a href=http://notificationsounds.com>Notification Sounds</a>.<br>
+  Like what you see? Then <a href='mailto:mikeobilade@gmail.com?subject=Hi there!'><b>get in touch!</b></a>
+  </b><br>
+  Check out <a href=https://codepen.io/MadeWithMike target='_blank'><b>MadeWithMike</b></a>.
+  </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js'></script>
+
+  </body>
+</html>
